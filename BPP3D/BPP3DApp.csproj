@@ -1,0 +1,47 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <AssemblyName>BPP3DApp</AssemblyName>
+    <RootNamespace>BPP3DApp</RootNamespace>
+    <Authors>Muamer Hrncic</Authors>
+    <SignAssembly>true</SignAssembly>
+    <DelaySign>false</DelaySign>
+    <StartupObject>BPP3DApp.Program</StartupObject>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <Optimize>true</Optimize>
+    <DocumentationFile></DocumentationFile>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Created Instances\Results\BPP3D\**" />
+    <EmbeddedResource Remove="Created Instances\Results\BPP3D\**" />
+    <None Remove="Created Instances\Results\BPP3D\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\BPP3DLib\BPP3DLib.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Created Instances\Instances\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="DynamicLanguageRuntime" Version="1.3.0" />
+    <PackageReference Include="EcmaScript.NET" Version="2.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="IronPython">
+      <HintPath>D:\soft\IronPython.2.7.11\IronPython.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Dynamic">
+      <HintPath>D:\soft\IronPython.2.7.11\Microsoft.Dynamic.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+</Project>
